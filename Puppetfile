@@ -34,8 +34,8 @@ github "boxen", "3.3.4"
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
-github "foreman",    "1.0.0"
-github "homebrew",   "1.5.1"
+github "foreman",    "1.1.0"
+github "homebrew",   "1.6.0"
 github "inifile",    "1.0.0", :repo => "puppetlabs/puppetlabs-inifile"
 github "repository", "2.2.0"
 github "xquartz",    "1.1.0"
@@ -48,9 +48,24 @@ github "xquartz",    "1.1.0"
 # これはGitHub上にあるboxen/puppet-dropboxリポジトリの1.0.0
 # を使うという意味。バージョン名はGitHub上で確認する必要がある。
 
-github "dropbox",     "1.0.0"
+github "dropbox",     "1.2.0"
 github "icu4c",       "1.0.0"
 github "xquartz",     "1.0.0"
 github "libtool",     "1.0.0"
-github "osx",     "1.0.0"
+github "osx",         "2.2.2"
+github "git",         "1.3.7"
+github "chrome",      "1.1.2"
+github "firefox",     "1.1.7"
+github "iterm2",      "1.0.4"
+github "cyberduck"    "1.0.1"
+github "zsh"          "1.0.0"
+github "wget"         "1.0.0"
+github "screen"       "0.0.2"
+github "vim"          "1.0.5"
+github "autoconf"     "1.0.0"
+github "github_for_mac" "1.0.1"
+github "better_touch_tools" "1.0.0"
+github "tmux"         "1.0.2"
+github "xtrafinder"   "1.0.1"
+github "rbenv"        "0.2.0"
 

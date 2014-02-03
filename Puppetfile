@@ -48,9 +48,9 @@ github "xquartz",    "1.1.0"
 # これはGitHub上にあるboxen/puppet-dropboxリポジトリの1.0.0
 # を使うという意味。バージョン名はGitHub上で確認する必要がある。
 
-#github "dropbox",     "1.0.0"
-#github "icu4c",       "1.0.0"
-#github "xquartz",     "1.0.0"
-#github "libtool",     "1.0.0"
-#github "osx",     "1.0.0"
+github "dropbox",     "1.0.0"
+github "icu4c",       "1.0.0"
+github "xquartz",     "1.0.0"
+github "libtool",     "1.0.0"
+github "osx",     "1.0.0"
 

@@ -31,7 +31,7 @@ osx_chsh { $::luser:
   shell   => "${boxen::config::homebrewdir}/bin/zsh";
 }
 
-  $home     = "/Users/${::luser}"
+  $home     = "/Users/${::boxen_user}"
   $src      = "${home}/src"
   $dotfiles = "${src}/dotfiles"
 

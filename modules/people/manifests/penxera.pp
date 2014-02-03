@@ -1,16 +1,12 @@
 class people::penxera {
-  #puppetfile
-  include osx
 
   # lib
+  include osx
+  include wget
   include zsh
 
   # local application for develop
   include iterm2::stable
-  #include sublime_text_2
-  #sublime_text_2::package { 'Emmet':
-  #  source => 'sergeche/emmet-sublime'
-  #}
   include firefox
   include chrome
   include cyberduck
@@ -37,10 +33,6 @@ class people::penxera {
     'Kobito':
         source   => "http://kobito.qiita.com/download/Kobito_v1.2.0.zip",
         provider => compressed_app;
-
-    'XtraFinder':
-        source   => "http://www.trankynam.com/xtrafinder/downloads/XtraFinder.dmg",
-        provider => pkgdmg;
 
     'sublimeText':
         source  =>  "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg",
@@ -75,20 +67,22 @@ osx_chsh { $::boxen_user:
 
   # dotfile setting
   $home     = "/Users/${::boxen_user}"
-  #$src     = "${home}/src"
+  # $src     = "${home}/src"
   $dotfiles = "${home}/dotfiles"
 
-  # ~/dotfilesにGitHubのpenxera/dotfiles git-clone
   repository { $dotfiles:
-    source  => "penxera/dotfiles",
+    source  => "${::boxen_user}/dotfiles"
     # require => File[$src]
   }
-  # git-cloneしたらインストール
-  exec { "submodule-clone":
-    # "sh ${dotfiles}/install.sh":
+  exec { "sh ${dotfiles}/bootstrap.sh":
     cwd => $dotfiles,
-    # creates => "${home}/.zshrc",
+    creates => "${home}/.zshrc",
+    require => Repository[$dotfiles],
+    notify  => Exec['submodule-clone'],
+  }
+  exec { "submodule-clone":
+    cwd => $dotfiles,
     command => 'git submodule init && git submodule update',
-    require => Repository[$dotfiles]
+    require => Repository[$dotfiles],
   }
 }

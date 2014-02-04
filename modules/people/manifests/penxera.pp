@@ -35,13 +35,16 @@ class people::penxera {
         provider => compressed_app;
 
     'sublimeText':
-        source  =>  "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg",
-        provider    =>  pkgdmg;
+        source   =>  "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg",
+        provider =>  pkgdmg;
 
     'GoogleJapaneseInput':
-        source => "http://dl.google.com/japanese-ime/latest/GoogleJapaneseInput.dmg",
+        source   => "http://dl.google.com/japanese-ime/latest/GoogleJapaneseInput.dmg",
         provider => pkgdmg;
 
+    'senevier':
+        source   => "http://www.bicoid.com/app/senebier/archive/senebier.dmg",
+        provider => pkgdmg;
 
 }
 
